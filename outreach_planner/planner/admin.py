@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+# Registered models.
+
+from .models import Venue
+from .models import Volunteer
+from .models import Event
+
+admin.site.register(Venue)
+admin.site.register(Volunteer)
+admin.site.register(Event)
