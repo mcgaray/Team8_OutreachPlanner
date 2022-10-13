@@ -1,5 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Login</h1>
+<div class="bg-image" style="background-image: url('https://unsplash.com/photos/Tk0B3Dfkf_4/download?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDF8NzgyMTIzfHx8fHwyfHwxNjY1NjYyNjE0&force=true&w=1920'); 
+    height: 100vh">
+<div class="text-center">
+    <img src="https://cdn.discordapp.com/attachments/1021257672454066207/1030091365482233916/logo.png" class="mx-auto d-block" style="width:10%">
+</div>
+<br>
+<div class="card shadow mx-5 opacity-75">
+    <div class="card-body">
+<form action="" method=POST>
+    {% csrf_token %}
+<form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="input_email" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="input_password">
+    </div>
+    <center><a>Forgot Password</a></center>
+    <center><a>Sign Up</a></center>
+    <br>
+    <center><button type="submit" class="btn btn-primary">Login</button></center>
+  </form>
+</div>
+</div>
+</div>
 {% endblock content %}
