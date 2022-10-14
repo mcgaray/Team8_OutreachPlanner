@@ -4,5 +4,41 @@
 
 {% block content %}
 {% include 'navbar.html' %}
-Hello World
+    <br/>
+    <div class="text-center">
+        <h1>Dashboard</h1>
+    </div>   
+    <br/>
+        {% for event in event_list %}
+            <div class="card">
+                <div class="card-header">
+                    {{ event.event_date.date }}
+                </div>
+                <div class="card-body">
+                <h5 class="card-title"> {{ event.event_name }}</h5>
+                <p class="card-text">
+                    <div>
+                        <p> <strong>Time:</strong> {{ event.event_date.time }} <br/>
+                            <strong>Event Organizer:</strong> {{ event.organizer }} <br/>
+                            <strong>Description:</strong> {{ event.description }} <br/>
+
+                            <!--<strong>Venue:</strong> {{ event.venue.venue_name }} 
+                                <ul>
+                                    <li>Address: {{ event.venue.address }}</li>    
+                                    <li>Event Link:{{ event.venue.web_link }}</li>
+                                    <li>Contact Number:{{ event.venue.phone }}</li>    
+                                    <li>Contact Email: {{ event.venue.email }}</li>  
+                                </ul>-->
+                            <!--<strong>Attendees:</strong> <br/>
+                                {% for user in event.volunteers.all %}
+                                    {{ user.}}
+                                {% endfor %}--> 
+                        </p>
+                    </div>
+                </p>
+                </div>
+             </div>
+            <br/>
+        {% endfor %}
+
 {% endblock content %}
