@@ -12,6 +12,10 @@
 <form action="" method=POST>
     {% csrf_token %}
 <form class="row g-2">
+    <div class="mb-3">
+        <label for="Input_username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="input_username" aria-describedby="emailHelp", placeholder="Username">
+    </div>
     <label for="Input_name" class="form-label">Full Name</label>
     <div class="input-group">
         <input type="text" aria-label="First name" class="form-control", placeholder="First Name">
@@ -27,7 +31,11 @@
       <input type="password" class="form-control" name="input_password_retype", placeholder="Retype Password">
     </div>
     <br>
-    <center><button type="submit" class="btn btn-primary">Sign Up</button></center>
+    <form action="" method="POST">
+        
+        <center><button type="submit" class="btn btn-primary">Sign Up</button></center>
+
+    </form>
   </form>
 </div>
 </div>
