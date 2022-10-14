@@ -13,7 +13,7 @@ def login_user(request):
                 login(request, user)
                 return redirect('home')
         else:
-                messages.success(request,("There was an error. Please try again."))
+                messages.success(request,("Invalid input. Please try again."))
                 return redirect('login')
     else:
         return render(request, 'authenticate/login.html', {})
