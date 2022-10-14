@@ -5,43 +5,44 @@
 {% block content %}
 <div class="bg-image" style="background-image: url('https://unsplash.com/photos/Tk0B3Dfkf_4/download?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDF8NzgyMTIzfHx8fHwyfHwxNjY1NjYyNjE0&force=true&w=1920'); 
     height: 100vh">
-<div class="text-center">
-    <img src="https://cdn.discordapp.com/attachments/1021257672454066207/1030091365482233916/logo.png" class="mx-auto d-block" style="width:10%">
-</div>
-<br>
-<div class = "container-sm">
-<div class="card shadow mx-5 opacity-75 rounded-5">
-    <div class="card-body">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-danger rounded-4" role="alert">
-            {{ message }}
+  <div class="container pt-5 pb-3">
+      <img src="https://cdn.discordapp.com/attachments/1021257672454066207/1030091365482233916/logo.png" class="mx-auto d-block" style="width:10%">
+  </div>
+  <br>
+  <div class = "container">
+    <div class="card shadow mx-5 opacity-100 rounded-5">
+        <div class="card-body">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-danger alert-dismissible fade show rounded-4 text-center" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+        <form action="" method=POST>
+        {% csrf_token %}
+          <div class="mb-3 mx-5 mt-3">
+            <label for="input_email" class="form-label">Username</label>
+            <input type="text" class="form-control rounded-4" name="username" aria-describedby="emailHelp">
           </div>
-        {% endfor %}
-      {% endif %}
-  <form action="" method=POST>
-    {% csrf_token %}
-      <div class="mb-3 mx-5">
-        <label for="input_email" class="form-label">Email address</label>
-        <input type="email" class="form-control" name="input_email" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3 mx-5">
-        <label for="input_email" class="form-label">Password</label>
-        <input type="password" class="form-control" name="input_password">
-      </div>
-      <div class = "text-center">
-        <a>Forgot Password</a>
-      </div>
-      <div class = "text-center">
-        <a href="{% url 'register' %}">Signup</a>
-      </div>
-      <br>
-      <div class = "text-center">
-        <button type="submit" class="btn btn-primary rounded-4">Login</button>
-      </div>
-    </form>
-</div>
-</div>
-</div>
+          <div class="mb-3 mx-5">
+            <label for="input_email" class="form-label">Password</label>
+            <input type="password" class="form-control rounded-4" name="password">
+          </div>
+          <div class = "text-center">
+            <a>Forgot Password</a>
+          </div>
+          <div class = "text-center">
+            <a href="{% url 'register' %}">Signup</a>
+          </div>
+          <br>
+          <div class = "text-center">
+            <button type="submit" class="btn btn-primary rounded-4">Login</button>
+          </div>
+        </form>
+        </div>
+    </div>
+  </div>
 </div>
 {% endblock content %}
