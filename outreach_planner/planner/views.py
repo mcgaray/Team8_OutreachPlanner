@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import Event, Venue
@@ -41,3 +41,12 @@ def search_venue(request):
         return render(request, 'search_venue.html', {'searched': searched, 'venues': venues})
     else: 
         return render(request, 'search_venue.html', {})
+
+def update_venue(request, venue_id):
+    venue = Venue.objects.get(pk=venue_id)
+    form = VenueForm(request.POST or None, instance=venue)
+    if form.is_valid():
+        form.save()
+        return redirect('show-venue', venue.id)
+    return render(request, 'update_venue.html', 
+    {'venue': venue, 'form': form})
