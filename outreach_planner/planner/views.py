@@ -1,12 +1,17 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from django.http import HttpResponseRedirect
+=======
+from django.contrib.auth.decorators import login_required
+>>>>>>> test_views
 from .models import Event
 from .forms import VenueForm
 
-
+@login_required(login_url='/users/login_user')
 def home(request):
     event_list = Event.objects.all()
     return render(request, 'dashboard.html', 
+<<<<<<< HEAD
     {'event_list': event_list})
 
 def add_venue(request):
@@ -22,3 +27,6 @@ def add_venue(request):
             submitted = True
 
     return render(request, 'add_venue.html', {'form': form, 'submitted': submitted})
+=======
+    {'event_list': event_list, 'username': request.user.username})
+>>>>>>> test_views
