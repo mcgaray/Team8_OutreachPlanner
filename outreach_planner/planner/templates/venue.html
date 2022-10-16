@@ -6,12 +6,16 @@
     background-size: cover;
     ">
 {% include 'navbar.html' %}
+<br>
+    <h5 class="text-left"><a class="badge badge-light"  href="{% url 'home' %}">Back</a></h5>
     <div class="text-center py-5">
-        <h1><strong>Venues</strong></h1>
-        <a class="nav-link text-dark" href="{% url 'add-venue' %}">Add a Venue</a>
+        <h1><strong>Venues</strong></h1> 
+        <h5>
+            <a class="btn btn-primary btn-sm" href="{% url 'add-venue' %}">Add a Venue</a>
+        </h5>
     </div>
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
             {% for venue in venue_list %}
             <a href="{% url 'show-venue' venue.id %}" >
             <div class="col">
