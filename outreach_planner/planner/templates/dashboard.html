@@ -9,36 +9,33 @@
         <h1>Dashboard</h1>
     </div>   
     <br/>
-        {% for event in event_list %}
-            <div class="card">
-                <div class="card-header">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for event in event_list %}
+            <div class="col">
+              <div class="card h-100 shadow rounded-4">
+                <div class="card-header text-center">
                     {{ event.event_date.date }}
-                </div>
+                  </div>
+                <img src="https://cdn.discordapp.com/attachments/1021257672454066207/1028878266553073664/gantt.png" class="img-fluid rounded-4 px-2 py-2 box-shadow-sm" alt="...">
                 <div class="card-body">
-                <h5 class="card-title"> {{ event.event_name }}</h5>
-                <p class="card-text">
-                    <div>
-                        <p> <strong>Time:</strong> {{ event.event_date.time }} <br/>
-                            <strong>Event Organizer:</strong> {{ event.organizer }} <br/>
+                    <h4 class="card-title">{{ event.event_name }}</h4>
+                    <p class="card-text">
+                        <div class="text-truncate">
+                            <strong>Time:</strong> {{ event.event_date.time }} <br/>
+                        </div>
+                        <div class="text-truncate">
+                            <strong>Event Organizer:</strong> {{ event.organizer }}
+                        </div>
+                        <div class="text-truncate">
                             <strong>Description:</strong> {{ event.description }} <br/>
-
-                            <!--<strong>Venue:</strong> {{ event.venue.venue_name }} 
-                                <ul>
-                                    <li>Address: {{ event.venue.address }}</li>    
-                                    <li>Event Link:{{ event.venue.web_link }}</li>
-                                    <li>Contact Number:{{ event.venue.phone }}</li>    
-                                    <li>Contact Email: {{ event.venue.email }}</li>  
-                                </ul>-->
-                            <!--<strong>Attendees:</strong> <br/>
-                                {% for user in event.volunteers.all %}
-                                    {{ user.}}
-                                {% endfor %}--> 
-                        </p>
-                    </div>
-                </p>
-                </div>
-             </div>
-            <br/>
-        {% endfor %}
+                        </div>
+                    </p>
+              </div>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock content %}
