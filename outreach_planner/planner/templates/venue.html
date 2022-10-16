@@ -7,12 +7,12 @@
     ">
 {% include 'navbar.html' %}
 <br>
-    <h5 class="text-start"><a class="badge badge-light"  href="{% url 'home' %}">Back</a></h5>
+    <h5 class="text-start"><a class="badge badge-light"  href="{% url 'home' %}"> &lt;-- Back</a></h5>
     <div>
         <div>
             <h1 class="text-center"><strong>Venues</strong></h1> 
             <h5 class="text-end pe-5">
-                <a class="btn btn-success btn-sm" href="{% url 'add-venue' %}">Add a Venue</a>
+                <a class="btn btn-success btn-sm" href="{% url 'add-venue' %}"> + Add a Venue</a>
             </h5>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <div>
             <form class="d-flex" method=POST action="{% url 'search-venue' %}">
                 {% csrf_token %}
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search Venues" aria-label="Search" name="searched">
                 <button class="btn btn-secondary" type="Submit">Search</button>
             </form>
         </div>
