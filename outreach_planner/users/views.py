@@ -33,7 +33,7 @@ def register_user(request):
             first_name= form.cleaned_data['first_name']
             last_name=form.cleaned_data['last_name']
             password = form.cleaned_data['password1']
-            user = authenticate(username=username, password=password)
+            user = authenticate(request, username=username, password=password)
             login(request, user)
             messages.success(request,("Resgitration Successful"))
             return redirect('home')
