@@ -7,18 +7,30 @@
     ">
 {% include 'navbar.html' %}
 <br>
-    <h5 class="text-left"><a class="badge badge-light"  href="{% url 'home' %}">Back</a></h5>
-    <div class="text-center py-5">
-        <h1><strong>Venues</strong></h1> 
-        <h5>
-            <a class="btn btn-primary btn-sm" href="{% url 'add-venue' %}">Add a Venue</a>
-        </h5>
+    <h5 class="text-start"><a class="badge badge-light"  href="{% url 'home' %}">Back</a></h5>
+    <div>
+        <div>
+            <h1 class="text-center"><strong>Venues</strong></h1> 
+            <h5 class="text-end pe-5">
+                <a class="btn btn-success btn-sm" href="{% url 'add-venue' %}">Add a Venue</a>
+            </h5>
+        </div>
     </div>
+    
     <div class="container">
+        <div>
+            <form class="d-flex" method=POST action="{% url 'search-venue' %}">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary" type="Submit">Search</button>
+            </form>
+        </div>
+        <br>
         <div class="row row-cols-1 row-cols-md-3 g-3">
             {% for venue in venue_list %}
-            <a href="{% url 'show-venue' venue.id %}" >
+            
             <div class="col">
+            <a href="{% url 'show-venue' venue.id %}" >
               <div class="card h-100 shadow rounded-4">
                 <div class="card-header text-center">
                 </div>
@@ -27,8 +39,8 @@
                     </a><h4 class="card-title">{{ venue.venue_name }}</h4>
                 </div>
                 </div>
+            </a>
             </div>
-             </a>
             {% endfor %}
         </div>
     </div>

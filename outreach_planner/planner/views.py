@@ -33,3 +33,7 @@ def show_venue(request, venue_id):
     venue = Venue.objects.get(pk=venue_id)
     return render(request, 'show_venue.html', 
     {'venue': venue})
+
+def search_venue(request):
+    venue_list = Venue.objects.all()
+    return render(request, 'search_venue.html')
