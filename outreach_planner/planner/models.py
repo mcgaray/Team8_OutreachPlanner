@@ -15,7 +15,7 @@ class Venue(models.Model):
         return self.venue_name
 
 class Volunteer(models.Model):
-    user_uname = models.CharField(max_length=8)
+    user_uname = models.CharField(blank=True,max_length=8)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField('User Email')
