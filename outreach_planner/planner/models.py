@@ -1,13 +1,15 @@
+from tokenize import blank_re
 from unittest.util import _MAX_LENGTH
 from django.db import models
+from django.contrib.auth.models import User
 
 # tables
 class Venue(models.Model):
     venue_name = models.CharField('Venue Name', max_length=120)
-    address = models.CharField(max_length=300)
-    web_link = models.URLField('Event Link')
+    address = models.CharField(max_length=300, blank=True)
+    web_link = models.URLField('Event Link', blank=True)
     phone = models.CharField('Contact Number', max_length=13)
-    email = models.EmailField('Contact Email')
+    email = models.EmailField('Contact Email', blank=True)
 
     def __str__(self):
         return self.venue_name
@@ -24,7 +26,7 @@ class Event(models.Model):
     event_name = models.CharField('Event Name', max_length=120)
     event_date= models.DateTimeField('Event Date')
     venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.CASCADE)
-    organizer = models.CharField(max_length=120)
+    organizer = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     description = models.TextField(blank=True)
     volunteers = models.ManyToManyField(Volunteer, blank=True)
 
