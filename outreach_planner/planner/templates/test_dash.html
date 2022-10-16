@@ -1,0 +1,80 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for event in event_list %}
+    <div class="col">
+        <div class="card h-100">
+                <!--<div class="ms-3 mt-2">
+                    {{ event.event_date.date }}
+                </div>-->
+        <img src="https://cdn.discordapp.com/attachments/1021257672454066207/1028878266553073664/gantt.png" class="img-fluid rounded-4 px-2 py-2 box-shadow-sm" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ event.event_name }}</h5>
+            <p class="card-text">
+                <div class="text-truncate">
+                    <strong>Time:</strong> {{ event.event_date.time }} <br/>
+                </div>
+                <div class="text-truncate">
+                    <strong>Event Organizer:</strong> {{ event.organizer }}
+                </div>
+                <div class="text-truncate">
+                    <strong>Description:</strong> {{ event.description }} <br/>
+                </div>
+            </p>
+            </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for event in event_list %}
+    <div class="col">
+      <div class="card h-100">
+        <div class="col-md-4">
+            <img src="https://cdn.discordapp.com/attachments/1021257672454066207/1028878266553073664/gantt.png" class="img-fluid rounded-4 px-2 py-2 box-shadow-sm" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ event.event_name }}</h5>
+            <p class="card-text">
+                <div class="text-truncate">
+                    <strong>Time:</strong> {{ event.event_date.time }} <br/>
+                </div>
+                <div class="text-truncate">
+                    <strong>Event Organizer:</strong> {{ event.organizer }}
+                </div>
+                <div class="text-truncate">
+                    <strong>Description:</strong> {{ event.description }} <br/>
+                </div>
+            </p>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a short card.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
