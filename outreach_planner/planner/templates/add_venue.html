@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+    <br>
+    <center>
+        <h1>Add a Venue</h1>
+    <br><br>
+
+    {% if submitted %}
+        Your Venue was Submitted Successfully!
+        <div>
+            <a class="nav-link text-dark" href="{% url 'add-venue' %}">Click here to add more Venue</a>
+        </div>
+        
+    {% else %}
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+
+    {% endif %}
+    </center>
+{% endblock %}
