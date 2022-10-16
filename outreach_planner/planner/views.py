@@ -1,12 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from .models import Event
-=======
 from .models import Event, Venue
->>>>>>> test_user
 from .forms import VenueForm
 
 @login_required(login_url='/users/login_user')
