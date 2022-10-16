@@ -1,3 +1,4 @@
+
 from tokenize import blank_re
 from unittest.util import _MAX_LENGTH
 from django.db import models
@@ -15,7 +16,7 @@ class Venue(models.Model):
         return self.venue_name
 
 class Volunteer(models.Model):
-    username = models.CharField(max_length=8)
+    uname=models.CharField(null = False, max_length=8)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField('User Email')
