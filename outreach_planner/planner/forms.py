@@ -23,3 +23,4 @@ class VenueForm(ModelForm):
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Contact Email'}),
 
         }
+    

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Event
 from .forms import VenueForm
 
