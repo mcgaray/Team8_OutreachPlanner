@@ -6,7 +6,7 @@ from .forms import VenueForm
 
 @login_required(login_url='/users/login_user')
 def home(request):
-    event_list = Event.objects.all()
+    event_list = Event.objects.all().order_by('event_date')
     return render(request, 'dashboard.html', 
     {'event_list': event_list})
 
@@ -25,7 +25,7 @@ def add_venue(request):
     return render(request, 'add_venue.html', {'form': form, 'submitted': submitted})
 
 def list_venue(request):
-    venue_list = Venue.objects.all()
+    venue_list = Venue.objects.all().order_by('venue_name')
     return render(request, 'venue.html', 
     {'venue_list': venue_list})
 
