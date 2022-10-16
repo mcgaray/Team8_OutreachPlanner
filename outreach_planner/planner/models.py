@@ -1,3 +1,5 @@
+from tokenize import blank_re
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -28,4 +30,5 @@ class Event(models.Model):
     description = models.TextField(blank=True)
     volunteers = models.ManyToManyField(Volunteer, blank=True)
 
-# Create your models here.
+    def __str__(self):
+        return self.event_name
